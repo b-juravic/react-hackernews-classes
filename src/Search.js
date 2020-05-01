@@ -4,6 +4,7 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = { term: "" };
+    // in reality, these methods are typically named the same as below
     this.boundControlTerm = this.controlTerm.bind(this);
     this.boundSubmitForm = this.submitForm.bind(this);
   }
@@ -21,7 +22,7 @@ class Search extends React.Component {
     return (
       <form onSubmit={this.boundSubmitForm}>
         <label>Search Hacker News:
-          <input 
+          <input
             type="text"
             value={this.state.term}
             onChange={this.boundControlTerm}
