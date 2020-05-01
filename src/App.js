@@ -2,6 +2,7 @@ import React from 'react';
 import Search from "./Search";
 import './App.css';
 import axios from "axios";
+import StoryList from "./StoryList";
 
 class App extends React.Component {
   constructor(props) {
@@ -18,13 +19,14 @@ class App extends React.Component {
     } catch(err) {
       console.log("API request error: ", err.message);
     }
-    
+
   }
 
   render() {
     return (
       <div className="App">
         <Search submit={this.boundSubmitSearch} />
+        <StoryList stories={this.state.storyList}/>
       </div>
     );
   }
